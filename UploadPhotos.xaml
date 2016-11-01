@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoDiamondApp.UploadPhotos">
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+  <StackLayout Orientation="Horizontal" x:Name="stmenu" WidthRequest="50" HeightRequest="50">
+    <Button Image="back.png" HorizontalOptions="Start" x:Name="btnCancel" Clicked="btnCancel_click" WidthRequest="40" HeightRequest="40"></Button>
+    <Label Text="Photo Example" FontSize="Large" HorizontalOptions="FillAndExpand" VerticalOptions="Center" x:Name="lblTitle" TextColor="White" FontAttributes="Bold"></Label>
+
+    <Button Image="del.png" HorizontalOptions="End" x:Name="btnDelete"  Clicked="btnDelete_click"  WidthRequest="40" HeightRequest="40"></Button>
+    <Button Image="ok.png" HorizontalOptions="End"  x:Name="btnSave"   Clicked="btnSave_click" WidthRequest="40" HeightRequest="40"></Button>
+  </StackLayout>
+
+  <ProgressBar x:Name="pbProgress" HorizontalOptions="FillAndExpand" ></ProgressBar>
+  <ActivityIndicator Color="White" IsRunning="False" HeightRequest="32" WidthRequest="32" x:Name="aiProgress"></ActivityIndicator>
+  
+  <Label Text="Photo Title" x:Name="lblEvent" HorizontalOptions="StartAndExpand" TextColor="White"></Label>
+  <Entry x:Name ="txtTittle" Text="" ></Entry>
+
+  <Label Text="Detail" x:Name="lblDetail" TextColor="White"></Label>
+  <Entry x:Name ="txtDetail" Text=""  ></Entry>
+
+  <Label Text="Photo Event" x:Name="lblPhoto"></Label>
+  <Image x:Name="imgPicture" Source="pickpicture.png">
+    <Image.GestureRecognizers>
+      <TapGestureRecognizer
+              Tapped="btnPicture_click"
+              NumberOfTapsRequired="1" />
+    </Image.GestureRecognizers>
+  </Image>
+
+  
+  
+</ContentPage>
